@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97B927FA1AD963FD00E710FB /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B927F91AD963FD00E710FB /* Author.swift */; };
+		97B927FC1AD979E400E710FB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B927FB1AD979E400E710FB /* Book.swift */; };
+		97B927FE1AD97D2300E710FB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97B927FD1AD97D2300E710FB /* SwiftyJSON.swift */; };
 		97C91D7D1AD9476500EB15B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C91D7C1AD9476500EB15B9 /* AppDelegate.swift */; };
 		97C91D7F1AD9476500EB15B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C91D7E1AD9476500EB15B9 /* ViewController.swift */; };
 		97C91D821AD9476500EB15B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C91D801AD9476500EB15B9 /* Main.storyboard */; };
 		97C91D841AD9476500EB15B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C91D831AD9476500EB15B9 /* Images.xcassets */; };
 		97C91D871AD9476500EB15B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97C91D851AD9476500EB15B9 /* LaunchScreen.xib */; };
 		97C91D931AD9476600EB15B9 /* HttprequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C91D921AD9476600EB15B9 /* HttprequestTests.swift */; };
+		97C91D9D1AD947DD00EB15B9 /* OpenLibraryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C91D9C1AD947DD00EB15B9 /* OpenLibraryApi.swift */; };
+		97ED0F5B1AF6862F004CD4C8 /* BookAuthor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97ED0F5A1AF6862E004CD4C8 /* BookAuthor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		97B927F91AD963FD00E710FB /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		97B927FB1AD979E400E710FB /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		97B927FD1AD97D2300E710FB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		97C91D771AD9476500EB15B9 /* Httprequest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Httprequest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C91D7B1AD9476500EB15B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C91D7C1AD9476500EB15B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +44,8 @@
 		97C91D8C1AD9476500EB15B9 /* HttprequestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HttprequestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C91D911AD9476600EB15B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97C91D921AD9476600EB15B9 /* HttprequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttprequestTests.swift; sourceTree = "<group>"; };
+		97C91D9C1AD947DD00EB15B9 /* OpenLibraryApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenLibraryApi.swift; sourceTree = "<group>"; };
+		97ED0F5A1AF6862E004CD4C8 /* BookAuthor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookAuthor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +88,12 @@
 			isa = PBXGroup;
 			children = (
 				97C91D7C1AD9476500EB15B9 /* AppDelegate.swift */,
+				97C91D9C1AD947DD00EB15B9 /* OpenLibraryApi.swift */,
+				97B927F91AD963FD00E710FB /* Author.swift */,
+				97ED0F5A1AF6862E004CD4C8 /* BookAuthor.swift */,
+				97B927FB1AD979E400E710FB /* Book.swift */,
 				97C91D7E1AD9476500EB15B9 /* ViewController.swift */,
+				97B927FD1AD97D2300E710FB /* SwiftyJSON.swift */,
 				97C91D801AD9476500EB15B9 /* Main.storyboard */,
 				97C91D831AD9476500EB15B9 /* Images.xcassets */,
 				97C91D851AD9476500EB15B9 /* LaunchScreen.xib */,
@@ -212,7 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97ED0F5B1AF6862F004CD4C8 /* BookAuthor.swift in Sources */,
 				97C91D7F1AD9476500EB15B9 /* ViewController.swift in Sources */,
+				97C91D9D1AD947DD00EB15B9 /* OpenLibraryApi.swift in Sources */,
+				97B927FA1AD963FD00E710FB /* Author.swift in Sources */,
+				97B927FE1AD97D2300E710FB /* SwiftyJSON.swift in Sources */,
+				97B927FC1AD979E400E710FB /* Book.swift in Sources */,
 				97C91D7D1AD9476500EB15B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +425,7 @@
 				97C91D981AD9476600EB15B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97C91D991AD9476600EB15B9 /* Build configuration list for PBXNativeTarget "HttprequestTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +434,7 @@
 				97C91D9B1AD9476600EB15B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
