@@ -10,13 +10,14 @@ import Foundation
 
 class Book{
   var title: String!
-  //var languages: [String]!
   var isbn: String!
   var imgUrl: String!
   //var publishYear: Int!
   
-  init(isbn: String, imgUrl: String){
-    self.imgUrl = imgUrl
+  init(isbn: String, imgUrl: String?){
+    if let img = imgUrl {
+      self.imgUrl = imgUrl
+    }
     self.isbn = isbn
   }
 }

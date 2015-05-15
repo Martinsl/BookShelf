@@ -10,20 +10,32 @@ import UIKit
 
 class BookViewController: UIViewController {
   
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var authorLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
+  var bookFound:Book!
   let api = OpenLibraryAPI()
+  var authorName:String = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     imageView.contentMode = UIViewContentMode.ScaleAspectFit
-    loadImage("https://covers.openlibrary.org/b/id/2655619-S.jpg")
+    
+    titleLabel.text = "Title: \(bookFound.title)"
+    authorLabel.text = "Author: \(authorName)"
+    var url = bookFound.imgUrl
+    url = url.substringToIndex(advance(url.startIndex, count(url)-5)) + "M.jpg"
+    loadImage(url)
+    dispatch_async(dispatch_get_main_queue()) {
+      self.activityIndicator.stopAnimating()
+    }
   }
   
   func loadImage(urlString:String){
+    
     
     var imgURL: NSURL = NSURL(string: urlString)!
     let request: NSURLRequest = NSURLRequest(URL: imgURL)

@@ -9,6 +9,8 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+
+  @IBOutlet weak var actIndicator: UIActivityIndicatorView!
   
   var items = [String]()
   var authorFound: Author!
@@ -33,15 +35,17 @@ class TableViewController: UITableViewController {
     let title = authorFound.books[indexPath.row].title
     println("Book ISBN is : \(isbn)")
     
-    //self.activityIndicator.startAnimating()
+    actIndicator.startAnimating()
     let searchResult = api.loadBook(isbn){ (bookFound) -> Void in
       //println(bookFound.imgUrl)
-      bookFound.title = self.title
+      bookFound.title = title
       
       dispatch_async(dispatch_get_main_queue()) {
-        //self.activityIndicator.stopAnimating()
-        var VC1 = self.storyboard?.instantiateViewControllerWithIdentifier("tableBooks") as! TableViewController
-        VC1.authorFound = self.authorFound
+        self.actIndicator.stopAnimating()
+        var VC1 = self.storyboard?.instantiateViewControllerWithIdentifier("bookInfo") as! BookViewController
+        VC1.bookFound = bookFound
+        VC1.authorName = self.authorFound.name
+        
         let _ = self.navigationController?.showViewController(VC1, sender: nil)
       }
     }
