@@ -26,12 +26,11 @@ class BookViewController: UIViewController {
     
     titleLabel.text = "Title: \(bookFound.title)"
     authorLabel.text = "Author: \(authorName)"
-    var url = bookFound.imgUrl
-    url = url.substringToIndex(advance(url.startIndex, count(url)-5)) + "M.jpg"
-    loadImage(url)
-    dispatch_async(dispatch_get_main_queue()) {
-      self.activityIndicator.stopAnimating()
+    if var url:String = bookFound.imgUrl {
+      url = url.substringToIndex(advance(url.startIndex, count(url)-5)) + "M.jpg"
+      loadImage(url)
     }
+    activityIndicator.stopAnimating()
   }
   
   func loadImage(urlString:String){

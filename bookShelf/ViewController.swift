@@ -9,19 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
   @IBOutlet var authorNameField: UITextField!
   @IBOutlet var searchButton: UIButton!
-  @IBOutlet weak var showResult: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   lazy var items = [String]()
-
+  
   let api = OpenLibraryAPI()
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-
+  
   @IBAction func searchAuthor(sender : AnyObject) {
     // TODO: Pass object to TableViewController
     if let authorNameText = authorNameField.text {
@@ -30,19 +29,34 @@ class ViewController: UIViewController {
         
         let searchResult = api.loadAuthor(authorNameText){ (authorFound) -> Void in
           
+          if authorFound.name != "Not Found" {
             dispatch_async(dispatch_get_main_queue()) {
               self.activityIndicator.stopAnimating()
               var VC1 = self.storyboard?.instantiateViewControllerWithIdentifier("tableBooks") as! TableViewController
               VC1.authorFound = authorFound
               let _ = self.navigationController?.showViewController(VC1, sender: nil)
             }
+          } else {
+            dispatch_async(dispatch_get_main_queue()) {
+              let alertController = UIAlertController(title: "Error", message:
+                "Author not Found", preferredStyle: UIAlertControllerStyle.Alert)
+              alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+              
+              self.presentViewController(alertController, animated: true, completion: nil)
+              self.activityIndicator.stopAnimating()
+            }
           }
-        } else {
-        self.showResult.text = "Author Name not provided"
+        }
+      } else {
+        let alertController = UIAlertController(title: "Error", message:
+          "Name not provided", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
       }
     }
   }
-
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

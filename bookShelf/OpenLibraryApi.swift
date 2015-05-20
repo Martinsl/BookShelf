@@ -81,7 +81,7 @@ class OpenLibraryAPI {
         
         //println(json["ISBN:\(bookISBN)"]["thumbnail_url"]) IMG URL
         let imageURL = json["ISBN:\(bookISBN)"]["thumbnail_url"].string
-        var book = Book(isbn: bookISBN, imgUrl: imageURL!)
+        var book = Book(isbn: bookISBN, imgUrl: imageURL)
         completion(result: book)
       }
     }

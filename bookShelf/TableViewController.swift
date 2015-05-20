@@ -50,12 +50,4 @@ class TableViewController: UITableViewController {
       }
     }
   }
-  
-  /*
-  * let alertController = UIAlertController(title: "Book Info", message:
-  *   self.items[indexPath.row], preferredStyle: UIAlertControllerStyle.Alert)
-  * alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-  *
-  * self.presentViewController(alertController, animated: true, completion: nil)
-  */
 }
