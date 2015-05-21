@@ -37,7 +37,6 @@ class TableViewController: UITableViewController {
     
     actIndicator.startAnimating()
     let searchResult = api.loadBook(isbn){ (bookFound) -> Void in
-      //println(bookFound.imgUrl)
       bookFound.title = title
       
       dispatch_async(dispatch_get_main_queue()) {

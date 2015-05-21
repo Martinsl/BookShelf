@@ -23,15 +23,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-Gf-gyU">
-                                <rect key="frame" x="162" y="151" width="66" height="30"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchAuthor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gUw-tO-Bka"/>
-                                </connections>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="EWR-GB-ioi">
                                 <rect key="frame" x="177" y="324" width="37" height="37"/>
                                 <constraints>
@@ -45,6 +36,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVc-Gf-gyU">
+                                <rect key="frame" x="162" y="151" width="66" height="30"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchAuthor:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gUw-tO-Bka"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -120,16 +120,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKZ-wv-XJJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WKZ-wv-XJJ">
                                 <rect key="frame" x="16" y="423" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xzr-QP-1vJ">
-                                <rect key="frame" x="67" y="270" width="240" height="128"/>
-                            </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-Lu-eCi">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="u4c-Lu-eCi">
                                 <rect key="frame" x="169" y="225" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="1fd-qq-uqp"/>
@@ -137,16 +134,20 @@
                                 </constraints>
                                 <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xzr-QP-1vJ">
+                                <rect key="frame" x="67" y="270" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Xzr-QP-1vJ" secondAttribute="centerY" constant="-0.5" id="CsV-9t-Ntq"/>
+                            <constraint firstItem="u4c-Lu-eCi" firstAttribute="centerY" secondItem="Tqe-DQ-3O5" secondAttribute="centerY" constant="-5" id="2U3-l8-sXp"/>
+                            <constraint firstItem="u4c-Lu-eCi" firstAttribute="centerY" secondItem="Xzr-QP-1vJ" secondAttribute="centerY" constant="-90.5" id="AiD-Jr-h72"/>
+                            <constraint firstAttribute="centerY" secondItem="u4c-Lu-eCi" secondAttribute="centerY" constant="90" id="GBQ-7Y-P51"/>
                             <constraint firstAttribute="centerX" secondItem="u4c-Lu-eCi" secondAttribute="centerX" id="HLV-yM-KKH"/>
                             <constraint firstItem="WKZ-wv-XJJ" firstAttribute="top" secondItem="Xzr-QP-1vJ" secondAttribute="bottom" constant="25" id="ICM-t8-wEz"/>
-                            <constraint firstItem="Tqe-DQ-3O5" firstAttribute="centerY" secondItem="Xzr-QP-1vJ" secondAttribute="centerY" constant="-85.5" id="TQC-XH-jvB"/>
                             <constraint firstItem="Xzr-QP-1vJ" firstAttribute="top" secondItem="Tqe-DQ-3O5" secondAttribute="bottom" constant="8" id="VoS-5W-RZE"/>
-                            <constraint firstItem="WKZ-wv-XJJ" firstAttribute="centerX" secondItem="Xzr-QP-1vJ" secondAttribute="centerX" constant="0.5" id="c7l-WM-oOa"/>
                             <constraint firstAttribute="centerX" secondItem="Xzr-QP-1vJ" secondAttribute="centerX" constant="0.5" id="cmR-Xn-gJP"/>
+                            <constraint firstItem="u4c-Lu-eCi" firstAttribute="centerY" secondItem="WKZ-wv-XJJ" secondAttribute="centerY" constant="-190" id="fjQ-00-51c"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

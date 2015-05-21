@@ -26,6 +26,7 @@ class BookViewController: UIViewController {
     
     titleLabel.text = "Title: \(bookFound.title)"
     authorLabel.text = "Author: \(authorName)"
+    activityIndicator.startAnimating()
     if var url:String = bookFound.imgUrl {
       url = url.substringToIndex(advance(url.startIndex, count(url)-5)) + "M.jpg"
       loadImage(url)

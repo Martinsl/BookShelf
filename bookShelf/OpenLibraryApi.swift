@@ -27,11 +27,9 @@ class OpenLibraryAPI {
         println(error.localizedDescription)
       } else {
         let json = JSON(data: data)
-        //println(json)
         if json["num_found"].intValue != 0 { // Test if the author exists
           var author = Author(name: authorName, numBooks: json["num_found"].intValue)
         
-          //populate author books
           if let bookArray = json["docs"].array {
           
             var books = [BookAuthor]()
@@ -43,16 +41,10 @@ class OpenLibraryAPI {
               if bookTitle != nil && bookISBN != nil {
                 var book = BookAuthor(title: bookTitle!, isbn: bookISBN!)
                 author.books.append(book)
-                //println(book.title)
               }
             }
           }
-        
-          println("Author's first book is " + author.books[0].title)
-          println("With ISBN:" + author.books[0].isbn)
-        
-          //returnString += "\(author.numBooks)"
-          completion(result: author)//returnString)
+          completion(result: author)
         } else {
           var author = Author(name: "Not Found", numBooks: json["0"].intValue)
           completion(result: author)
@@ -77,9 +69,7 @@ class OpenLibraryAPI {
         println(error.localizedDescription)
       } else {
         let json = JSON(data: data)
-        //println(json)
         
-        //println(json["ISBN:\(bookISBN)"]["thumbnail_url"]) IMG URL
         let imageURL = json["ISBN:\(bookISBN)"]["thumbnail_url"].string
         var book = Book(isbn: bookISBN, imgUrl: imageURL)
         completion(result: book)
